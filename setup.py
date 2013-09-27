@@ -6,14 +6,15 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '0.1.0'
+version = '0.9.0'
 
 long_description = '\n\n'.join([read('README.rst'),
                                 read('CHANGES.rst')])
 
 setup(name='rt.ploneversions',
       version=version,
-      description="Pin Plone Wizard",
+      description=("Retrieve information from dist.plone.org to safely "
+                   "and easily pin your egg versions"),
       long_description=long_description,
       classifiers=[
           "Development Status :: 4 - Beta",
