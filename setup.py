@@ -38,7 +38,7 @@ setup(name='rt.ploneversions',
           # -*- Extra requirements: -*-
       ],
       extras_require={
-          'test': ['z3c.testsetup']},
+          'test': ['nose']},
       entry_points={
           'console_scripts': [
               'ploneversions = rt.ploneversions.ploneversions:main',
