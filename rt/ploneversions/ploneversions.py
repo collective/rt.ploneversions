@@ -30,6 +30,8 @@ class CFGParser(RawConfigParser):
     _url = ''
     _version = ''
 
+    optionxform = str
+
     def __init__(self, url):
         ''' Initialize our object
 
