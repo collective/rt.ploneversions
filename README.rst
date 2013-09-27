@@ -32,9 +32,7 @@ Usage
 -----
 
 Launch the `ploneversions` script
-passing a valid Plone version. You can check them here:
-
- - http://dist.plone.org/release/
+passing a valid Plone version.
 
 Example output (with some ellipses)::
 
@@ -59,6 +57,12 @@ Example output (with some ellipses)::
     ...
     zc.relation = 1.0
 
+You may want to redirect this output to a file, e.g.::
+
+    $ ploneversions 4.3-latest > versions.cfg
+
+You can check the available Plone versions here http://dist.plone.org/release.
+
 
 Authors
 =======
@@ -68,3 +72,4 @@ This product was developed by RedTurtle Technology team.
 .. image:: http://www.redturtle.net/redturtle_banner.png
    :alt: RedTurtle Technology Site
    :target: http://www.redturtle.it/
+
