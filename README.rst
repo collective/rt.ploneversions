@@ -7,18 +7,29 @@ and easily pin your egg versions.
 Motivation
 ----------
 
-Generally Plone buildouts extend online configuration files with
-known good working sets of eggs, which can extend other resources.
+It is a common practice for Plone buildouts
+to extend online configuration files with
+configuration files that declare known good working versions.
+Those external resources can, in turn,
+extend other online resources.
 
-This means that your buildout will have to rely on the fact that
-the external resources should be available
-before it can start its job: if you have network problem you can be lost!
+This means that your buildout relies on the assumption
+that the external resources are available
+before it can start its job:
+a network problem can really turn out in a catastrophe!
 
-I don't want to cross my finger and wait for those versions to be
-retrieved on the net, so I wanted to merge all those
+This already happened and there are workarounds to solve this issue:
+
+- http://devblog.4teamwork.ch/blog/2013/06/06/download-dot-zope-dot-org-is-down-how-to-fix-buildout/
+
+Given that I don't want to cross my finger
+and wait for those resources to be retrieved on the net,
+I started including all the externals
 known good working versions in a file.
 
-It is tedious to do it by hand, so I wrote this script.
+It is tedious to do it by hand,
+because you have to merge some files in the correct order,
+so I wrote the `ploneversions` script.
 Enjoy it!
 
 Installation
