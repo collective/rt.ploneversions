@@ -4,9 +4,10 @@ import sys
 from ConfigParser import RawConfigParser, NoOptionError, NoSectionError
 from urllib2 import urlopen
 
-VERSION_URL_TEMPLATE= "http://dist.plone.org/release/%s/versions.cfg"
+VERSION_URL_TEMPLATE = "http://dist.plone.org/release/%s/versions.cfg"
 
 parser = argparse.ArgumentParser(description='Plone version pinning')
+
 
 def merge_versions(v1, v2):
     ''' Merge the versions from v1 with the ones from v2
@@ -20,11 +21,12 @@ def merge_versions(v1, v2):
 def sort_versions(v):
     ''' Return the versions sorted
     '''
-    v.sort(key=lambda x:x[0])
+    v.sort(key=lambda x: x[0])
     return v
 
 
 class CFGParser(RawConfigParser):
+
     ''' Parse a URL
     '''
     _url = ''
@@ -51,12 +53,10 @@ class CFGParser(RawConfigParser):
             return []
         return [line.strip() for line in option.splitlines()]
 
-
     def get_versions(self):
         ''' Get's the versions from this file
         '''
         return self.items('versions')
-
 
     def get_merged_versions(self):
         ''' Get's the versions merged according to the extends
@@ -81,6 +81,7 @@ class CFGParser(RawConfigParser):
 
 
 class PloneCFGParser(CFGParser):
+
     ''' Parse a URL from dist.plone.org
     '''
     _version = ''

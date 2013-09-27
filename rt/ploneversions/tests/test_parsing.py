@@ -13,6 +13,7 @@ cfgparser = CFGParser(fake_main)
 
 # we cd in to the mock folder
 
+
 def test_merge_versions():
     ''' Test the function that will merge the versions
     '''
@@ -40,13 +41,8 @@ def test_get_versions():
     observed = cfgparser.get_merged_versions()
     assert (observed == expected)
 
+
 def test_call():
     ''' Call the cfgparser, should print something
     '''
     cfgparser()
-
-
-
-
-
-

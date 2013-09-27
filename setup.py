@@ -23,7 +23,7 @@ setup(name='rt.ploneversions',
           "Programming Language :: Python :: 2.7",
           "Programming Language :: Python",
           "Topic :: Software Development :: Libraries :: Python Modules",
-          ],
+      ],
       keywords='',
       author='RedTurtle Technology',
       author_email='sviluppolplone@redturtle.it',
@@ -42,6 +42,6 @@ setup(name='rt.ploneversions',
       entry_points={
           'console_scripts': [
               'ploneversions = rt.ploneversions.ploneversions:main',
-              ],
-          },
+          ],
+      },
       )
