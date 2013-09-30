@@ -7,20 +7,24 @@ and easily pin your egg versions.
 Motivation
 ----------
 
-It is a common practice for Plone buildouts
+It is a common practice, for Plone buildouts,
 to extend online configuration files with
-configuration files that declare known good working versions.
+that declare known good working versions.
 Those external resources can, in turn,
-extend other online resources.
+extend other remote resources.
 
 This means that your buildout relies on the assumption
-that the external resources are available
-before it can start its job:
+that the all those external resources are available.
+If they are not buildout will fail:
 a network problem can really turn out in a catastrophe!
 
 This already happened and there are workarounds to solve this issue:
 
 - http://devblog.4teamwork.ch/blog/2013/06/06/download-dot-zope-dot-org-is-down-how-to-fix-buildout/
+
+Another (minor) issue with this approach is that
+you have to wait for the resources to be fetched
+before starting.
 
 Given that I don't want to cross my finger
 and wait for those resources to be retrieved on the net,
@@ -28,9 +32,10 @@ I started including all the externals
 known good working versions in a file.
 
 It is tedious to do it by hand,
-because you have to merge some files in the correct order,
+because you have to fetch and merge some files in the correct order,
 so I wrote the `ploneversions` script.
-Enjoy it!
+
+I hope you will enjoy it!
 
 Installation
 ------------
@@ -48,6 +53,11 @@ passing a valid Plone version.
 Example output (with some ellipses)::
 
     $ ploneversions 4.3-latest
+    ## http://download.zope.org/zopetoolkit/index/1.0.8/zopeapp-versions.cfg
+    zope.app.applicationcontrol = 3.5.10
+    ...
+    zope.rdb = 3.5.0
+
     ## http://download.zope.org/zopetoolkit/index/1.0.8/ztk-versions.cfg
     zope.annotation = 3.5.0
     ...
@@ -58,11 +68,6 @@ Example output (with some ellipses)::
     ...
     zope.testbrowser = 3.11.1
 
-    ## http://download.zope.org/zopetoolkit/index/1.0.8/zopeapp-versions.cfg
-    zope.app.applicationcontrol = 3.5.10
-    ...
-    zope.rdb = 3.5.0
-
     ## http://dist.plone.org/release/4.3-latest/versions.cfg
     docutils = 0.9.1
     ...
@@ -71,6 +76,8 @@ Example output (with some ellipses)::
 You may want to redirect this output to a file, e.g.::
 
     $ ploneversions 4.3-latest > versions.cfg
+
+and add this file to your buildout.
 
 You can check the available Plone versions here http://dist.plone.org/release.
 
