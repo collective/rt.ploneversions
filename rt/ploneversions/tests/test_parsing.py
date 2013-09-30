@@ -33,10 +33,16 @@ def test_get_extends_urls():
 def test_get_versions():
     ''' Test parsing
     '''
-    expected = [('file:main.cfg', [('a', '1')]),
-                ('file:sub2.cfg', [('a', '2'), ('c', '2')]),
-                ('file:sub1.cfg', [('a', '3'), ('b', '1')]),
-                ('file:subsub.cfg', [('a', '4'), ('d', '1.1')])
+    expected = [('file:main.cfg', [('main', 'main')]),
+                ('file:sub2.cfg', [('main', 'sub2'),
+                                   ('sub2', 'sub2')]),
+                ('file:sub1.cfg', [('main', 'sub1'),
+                                   ('sub1', 'sub1'),
+                                   ('sub2', 'sub1')]),
+                ('file:subsub.cfg', [('main', 'subsub'),
+                                     ('sub1', 'subsub'),
+                                     ('sub2', 'subsub'),
+                                     ('subsub', 'subsub')])
                 ]
 
     observed = cfgparser.get_merged_versions()
