@@ -8,7 +8,7 @@ Motivation
 ----------
 
 It is a common practice, for Plone buildouts,
-to extend online configuration files with
+to extend online configuration files
 that declare known good working versions.
 Those external resources can, in turn,
 extend other remote resources.
@@ -18,7 +18,7 @@ that the all those external resources are available.
 If they are not buildout will fail:
 a network problem can really turn out in a catastrophe!
 
-This already happened and there are workarounds to solve this issue:
+This already happened. Luckily there are workarounds to solve this issue:
 
 - http://devblog.4teamwork.ch/blog/2013/06/06/download-dot-zope-dot-org-is-down-how-to-fix-buildout/
 
@@ -26,9 +26,13 @@ Another (minor) issue with this approach is that
 you have to wait for the resources to be fetched
 before starting.
 
+Some other times, you may not want to include network resources,
+e.g. because your customer network will not easily allow you
+to fetch them.
+
 Given that I don't want to cross my finger
 and wait for those resources to be retrieved on the net,
-I started including all the externals
+I started including all those externals
 known good working versions in a file.
 
 It is tedious to do it by hand,
