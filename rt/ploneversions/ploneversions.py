@@ -100,4 +100,14 @@ class PloneCFGParser(CFGParser):
 def main(return_tagdir=False):
     """ This will try to fetch versions from dist.plone.org
     """
+    try:
+        version = sys.argv[1]
+    except IndexError:
+        print("""
+Usage: ploneversions X.Y.X
+
+Check available Plone versions at:
+ - http://dist.plone.org/release
+""")
+        return
     return PloneCFGParser(sys.argv[1])()

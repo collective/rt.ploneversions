@@ -4,7 +4,8 @@ Changelog for rt.ploneversions
 0.9.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Suggest usage
+  [ale-rt]
 
 
 0.9.0 (2013-10-01)
