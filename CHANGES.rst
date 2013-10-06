@@ -1,7 +1,7 @@
 Changelog for rt.ploneversions
 ==============================
 
-0.9.1 (unreleased)
+0.9.1 (2013-10-06)
 ------------------
 
 - Suggest usage
