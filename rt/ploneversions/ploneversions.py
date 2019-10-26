@@ -51,9 +51,14 @@ class CFGParser(RawConfigParser):
             option = self.get('buildout', 'extends').strip()
         except (NoOptionError, NoSectionError):
             return []
-        urls = [line.strip() for line in option.splitlines()]
-        urls.reverse()
-        return urls
+        base_url = self._url.rpartition("/")[0]
+        urls = []
+        for line in option.splitlines():
+            line = line.strip()
+            if not "://" in line:
+                line = "/".join((base_url, line.strip()))
+            urls.append(line)
+        return list(reversed(urls))
 
     def get_versions(self):
         ''' Get's the versions from this file
