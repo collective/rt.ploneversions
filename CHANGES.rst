@@ -1,7 +1,7 @@
 Changelog for rt.ploneversions
 ==============================
 
-0.9.2 (unreleased)
+0.9.2 (2019-10-26)
 ------------------
 
 - Use https URLs
