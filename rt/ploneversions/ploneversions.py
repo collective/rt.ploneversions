@@ -4,7 +4,7 @@ import sys
 from ConfigParser import RawConfigParser, NoOptionError, NoSectionError
 from urllib2 import urlopen
 
-VERSION_URL_TEMPLATE = "http://dist.plone.org/release/%s/versions.cfg"
+VERSION_URL_TEMPLATE = "https://dist.plone.org/release/%s/versions.cfg"
 
 parser = argparse.ArgumentParser(description='Plone version pinning')
 
@@ -107,7 +107,7 @@ def main(return_tagdir=False):
 Usage: ploneversions X.Y.X
 
 Check available Plone versions at:
- - http://dist.plone.org/release
+ - https://dist.plone.org/release
 """)
         return
     return PloneCFGParser(sys.argv[1])()

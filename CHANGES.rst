@@ -4,7 +4,8 @@ Changelog for rt.ploneversions
 0.9.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Use https URLs
+  [ale-rt]
 
 
 0.9.1 (2013-10-06)

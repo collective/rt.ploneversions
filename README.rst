@@ -20,7 +20,7 @@ a network problem can really turn out in a catastrophe!
 
 This already happened. Luckily there are workarounds to solve this issue:
 
-- http://devblog.4teamwork.ch/blog/2013/06/06/download-dot-zope-dot-org-is-down-how-to-fix-buildout/
+- https://devblog.4teamwork.ch/blog/2013/06/06/download-dot-zope-dot-org-is-down-how-to-fix-buildout/
 
 Another (minor) issue with this approach is that
 you have to wait for the resources to be fetched
@@ -57,22 +57,22 @@ passing a valid Plone version.
 Example output (with some ellipses)::
 
     $ ploneversions 4.3-latest
-    ## http://download.zope.org/zopetoolkit/index/1.0.8/zopeapp-versions.cfg
+    ## https://download.zope.org/zopetoolkit/index/1.0.8/zopeapp-versions.cfg
     zope.app.applicationcontrol = 3.5.10
     ...
     zope.rdb = 3.5.0
 
-    ## http://download.zope.org/zopetoolkit/index/1.0.8/ztk-versions.cfg
+    ## https://download.zope.org/zopetoolkit/index/1.0.8/ztk-versions.cfg
     zope.annotation = 3.5.0
     ...
     zope.kgs = 1.2.0
 
-    ## http://download.zope.org/Zope2/index/2.13.21/versions.cfg
+    ## https://download.zope.org/Zope2/index/2.13.21/versions.cfg
     Zope2 = 2.13.21
     ...
     zope.testbrowser = 3.11.1
 
-    ## http://dist.plone.org/release/4.3-latest/versions.cfg
+    ## https://dists.plone.org/release/4.3-latest/versions.cfg
     docutils = 0.9.1
     ...
     zc.relation = 1.0
@@ -83,7 +83,7 @@ You may want to redirect this output to a file, e.g.::
 
 and add this file to your buildout.
 
-You can check the available Plone versions here http://dist.plone.org/release.
+You can check the available Plone versions here https://dist.plone.org/release.
 
 
 Authors
@@ -91,7 +91,6 @@ Authors
 
 This product was developed by RedTurtle Technology team.
 
-.. image:: http://www.redturtle.net/redturtle_banner.png
+.. image:: https://www.redturtle.net/redturtle_banner.png
    :alt: RedTurtle Technology Site
-   :target: http://www.redturtle.it/
-
+   :target: https://www.redturtle.it/
