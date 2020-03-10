@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import argparse
 import sys
-from ConfigParser import RawConfigParser, NoOptionError, NoSectionError
-from urllib2 import urlopen
+from configparser import RawConfigParser, NoOptionError, NoSectionError
+from urllib.request import urlopen
 
 VERSION_URL_TEMPLATE = "https://dist.plone.org/release/%s/versions.cfg"
 
@@ -15,7 +15,7 @@ def merge_versions(v1, v2):
     v1 = dict(v1)
     v2 = dict(v2)
     v2.update(v1)
-    return [(x, y) for x, y in v2.iteritems()]
+    return [(x, y) for x, y in v2.items()]
 
 
 def sort_versions(v):
@@ -42,7 +42,7 @@ class CFGParser(RawConfigParser):
         RawConfigParser.__init__(self)
         self._url = url
         self.urlfp = urlopen(self._url)
-        self.readfp(self.urlfp)
+        self.read_string(self.urlfp.read().decode())
 
     def get_extends_urls(self):
         ''' Get the extends from the buildout
@@ -55,7 +55,7 @@ class CFGParser(RawConfigParser):
         urls = []
         for line in option.splitlines():
             line = line.strip()
-            if not "://" in line:
+            if not "://" in line and not line.startswith("file:"):
                 line = "/".join((base_url, line.strip()))
             urls.append(line)
         return list(reversed(urls))
@@ -81,10 +81,10 @@ class CFGParser(RawConfigParser):
         merged_versions = self.get_merged_versions()
         merged_versions.reverse()
         for url, versions in merged_versions:
-            print "## %s" % url
+            print(f"## {url}")
             for key, value in versions:
-                print "%s = %s" % (key, value)
-            print
+                print(f"{key} = {value}")
+            print()
 
 
 class PloneCFGParser(CFGParser):

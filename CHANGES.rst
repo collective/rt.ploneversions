@@ -4,7 +4,8 @@ Changelog for rt.ploneversions
 0.9.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Python 3 support. If you need to use this package on Python2 please use the 0.9.2 version.
+  [ale-rt]
 
 
 0.9.2 (2019-10-26)

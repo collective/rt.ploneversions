@@ -44,6 +44,9 @@ I hope you will enjoy it!
 Installation
 ------------
 
+The latest version of this package supports only Python 3.
+If you need to use this package on Python2 please use the 0.9.2 version.
+
 You can install **rt.ploneversions** with pip or easy_install::
 
     pip install rt.ploneversions
