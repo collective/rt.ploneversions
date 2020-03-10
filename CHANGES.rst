@@ -1,7 +1,7 @@
 Changelog for rt.ploneversions
 ==============================
 
-0.9.3 (unreleased)
+1.0.0 (2020-03-10)
 ------------------
 
 - Better error message when we cannot read the versions.cfg from dist.plone.org
