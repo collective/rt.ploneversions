@@ -2,6 +2,7 @@
 import argparse
 import sys
 from configparser import RawConfigParser, NoOptionError, NoSectionError
+from urllib.error import HTTPError
 from urllib.request import urlopen
 
 VERSION_URL_TEMPLATE = "https://dist.plone.org/release/%s/versions.cfg"
@@ -115,4 +116,8 @@ Check available Plone versions at:
  - https://dist.plone.org/release
 """)
         return
-    return PloneCFGParser(sys.argv[1])()
+    try:
+        return PloneCFGParser(sys.argv[1])()
+    except HTTPError:
+        print(f"ERROR: Cannot resolve Plone version {sys.argv[1]}")
+        sys.exit(1)
