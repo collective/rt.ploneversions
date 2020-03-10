@@ -40,7 +40,7 @@ setup(name='rt.ploneversions',
           # -*- Extra requirements: -*-
       ],
       extras_require={
-          'test': ['nose']},
+          'test': ['nose2']},
       entry_points={
           'console_scripts': [
               'ploneversions = rt.ploneversions.ploneversions:main',
